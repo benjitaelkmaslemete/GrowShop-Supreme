@@ -1,0 +1,460 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  /* Utilidades */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Header */
+  header {
+    background-color: #111;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+  }
+  
+  header .logo img {
+    height: 50px;
+  }
+  
+  header .logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  nav a:hover,
+  nav a.activo {
+    background-color: #28a745;
+  }
+  
+  /* Hero principal */
+  .hero {
+    background: url("img/fondo-hero.jpg") no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+    position: relative;
+  }
+  
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  .hero h2,
+  .hero p,
+  .hero a {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .boton-principal {
+    background-color: #28a745;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+  
+  .boton-principal:hover {
+    background-color: #218838;
+    cursor: pointer;
+  }
+  
+  /* Categorías */
+  .categorias-destacadas {
+    padding: 4rem 1rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .categoria {
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoria img {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .categoria h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Productos */
+  .productos-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .producto {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .producto:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .producto img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .producto h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .producto p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .precio {
+    display: block;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 1rem;
+  }
+  
+  .producto button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .producto button:hover {
+    background-color: #218838;
+  }
+  /* Info extra */
+.info-extra {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+    background-color: #e9f5ee;
+  }
+  
+  .bloque-info {
+    flex: 1 1 300px;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .bloque-info h3 {
+    color: #28a745;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #111;
+    color: #ccc;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .footer-grid div {
+    flex: 1 1 200px;
+  }
+  
+  footer h3 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  footer ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  footer ul li a {
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  footer ul li a:hover {
+    color: #28a745;
+  }
+  
+  footer p {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Página tienda */
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 1rem;
+  }
+  
+  .filtros select,
+  .filtros input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .filtros input[type="text"]:focus {
+    outline: none;
+    border-color: #28a745;
+  }
+  
+  /* Carrito */
+  #carrito-contenido {
+    padding: 2rem 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  #carrito-items {
+    margin-bottom: 1rem;
+  }
+  
+  .carrito-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+  
+  .carrito-item span {
+    flex: 1;
+  }
+  
+  .boton-eliminar {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }
+  
+  #total {
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  #vaciar-carrito,
+  #finalizar-compra {
+    background-color: #28a745;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #vaciar-carrito:hover,
+  #finalizar-compra:hover {
+    background-color: #218838;
+  }
+  
+  /* Contacto */
+  form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #28a745;
+  }
+  
+  form button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #218838;
+  }
+  
+  /* Animaciones */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .aparecer {
+    animation: aparecer 0.5s ease forwards;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .productos-grid,
+    .grid-categorias,
+    .info-extra {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+    }
+  
+    .footer-grid {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    nav ul {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .hero h2 {
+      font-size: 2rem;
+    }
+  
+    .filtros {
+      flex-direction: column;
+    }
+  }
+  

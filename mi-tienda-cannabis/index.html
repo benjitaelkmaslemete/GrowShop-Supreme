@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowShop Supreme</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+    <!-- FILTROS DE PRODUCTOS -->
+<section class="filtros">
+    <h2>Filtrar por categoría</h2>
+    <div class="filtro-lista">
+      <button onclick="filtrarProductos('todos')">Todos</button>
+      <button onclick="filtrarProductos('flores')">Flores</button>
+      <button onclick="filtrarProductos('pipas')">Pipas</button>
+      <button onclick="filtrarProductos('comestibles')">Comestibles</button>
+      <button onclick="filtrarProductos('aceites')">Aceites</button>
+      <button onclick="filtrarProductos('moledores')">Moledores</button>
+      <button onclick="filtrarProductos('semillas')">Semillas</button>
+      <button onclick="filtrarProductos('bongs')">Bongs</button>
+    </div>
+  </section>
+  
+  <!-- LISTADO DE PRODUCTOS -->
+  <section class="productos">
+    <div class="producto" data-categoria="flores">
+      <img src="img/producto1.jpg" alt="Marihuana premium">
+      <h3>Marihuana premium</h3>
+      <p>$9.990</p>
+    </div>
+    <div class="producto" data-categoria="pipas">
+      <img src="img/producto2.jpg" alt="Pipa de vidrio">
+      <h3>Pipa de vidrio</h3>
+      <p>$4.500</p>
+    </div>
+    <div class="producto" data-categoria="comestibles">
+      <img src="img/producto3.jpg" alt="Gomitas CBD">
+      <h3>Gomitas CBD</h3>
+      <p>$6.990</p>
+    </div>
+    <div class="producto" data-categoria="aceites">
+      <img src="img/producto4.jpg" alt="Aceite CBD">
+      <h3>Aceite CBD</h3>
+      <p>$11.990</p>
+    </div>
+    <div class="producto" data-categoria="moledores">
+      <img src="img/producto5.jpg" alt="Moledor metálico">
+      <h3>Moledor metálico</h3>
+      <p>$3.990</p>
+    </div>
+    <div class="producto" data-categoria="semillas">
+      <img src="img/producto6.jpg" alt="Semillas feminizadas">
+      <h3>Semillas feminizadas</h3>
+      <p>$5.500</p>
+    </div>
+    <div class="producto" data-categoria="bongs">
+      <img src="img/producto7.jpg" alt="Bong de vidrio">
+      <h3>Bong de vidrio</h3>
+      <p>$7.990</p>
+    </div>
+  </section>
+  
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="GrowShop Supreme" />
+      <h1>GrowShop Supreme</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carrito.html">🛒 <span id="contador-carrito">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slider">
+        <div class="slider-container">
+          <div class="slide fade">
+            <img src="img/slider1.jpg" alt="Cultivos de calidad">
+            <div class="caption">Cultivos de calidad premium</div>
+          </div>
+          <div class="slide fade">
+            <img src="img/slider2.jpg" alt="Accesorios para tu experiencia">
+            <div class="caption">Accesorios para tu experiencia</div>
+          </div>
+          <div class="slide fade">
+            <img src="img/slider3.jpg" alt="Todo lo que tu Grow necesita">
+            <div class="caption">Todo lo que tu Grow necesita</div>
+          </div>
+        </div>
+        <a class="prev" onclick="moverSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moverSlide(1)">&#10095;</a>
+      </section>
+      
+      <style>
+      .slider {
+        position: relative;
+        max-width: 100%;
+        margin: 2rem auto;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+      .slider-container {
+        position: relative;
+      }
+      .slide {
+        display: none;
+        position: relative;
+      }
+      .slide img {
+        width: 100%;
+        vertical-align: middle;
+        border-radius: 12px;
+      }
+      .caption {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #fff;
+        font-size: 1.5rem;
+        background-color: rgba(0,0,0,0.5);
+        padding: 10px 20px;
+        border-radius: 8px;
+      }
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 10px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        transition: 0.3s ease;
+        user-select: none;
+      }
+      .prev { left: 0; }
+      .next { right: 0; }
+      .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+      </style>
+      
+      <script>
+      let slideIndex = 0;
+      mostrarSlides();
+      
+      function moverSlide(n) {
+        mostrarSlides(slideIndex += n);
+      }
+      
+      function mostrarSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("slide");
+        if (!n && n !== 0) {
+          slideIndex++;
+        } else {
+          slideIndex = n;
+        }
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+        setTimeout(mostrarSlides, 6000); // Cambio automático cada 6 segundos
+      }
+      </script>
+      
+    <section class="hero">
+      <h2>Bienvenido al mundo verde 🌱</h2>
+      <p>Explora los mejores productos cannábicos del mercado.</p>
+      <a href="tienda.html" class="boton-principal">Ver tienda</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>Sobre Nosotros</h3>
+        <p>Pasión por el cannabis, amor por la naturaleza.</p>
+      </div>
+      <div>
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="faq.html">Preguntas Frecuentes</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Redes Sociales</h3>
+        <p>@GrowShopSupreme</p>
+      </div>
+    </div>
+    <p class="copyright">© 2025 GrowShop Supreme. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filtrarProductos(categoria) {
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(producto => {
+        producto.style.display = (categoria === 'todos' || producto.dataset.categoria === categoria) ? 'block' : 'none';
+      });
+    }
+  </script>
+  
+
+
+</body>
+</html>
